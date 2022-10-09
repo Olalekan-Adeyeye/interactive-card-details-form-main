@@ -54,9 +54,8 @@ cardNumber.addEventListener('input', function(){
     }
 })
 
-function checkForError(spaceOnCard, input, error, defaultValue){
-    if(!input.value) {
-        spaceOnCard.textContent = defaultValue
+function checkForError(input, error){
+    if(!input.value) {       
         error.classList.remove("hidden")
         input.classList.add("error-border")
         isInvalid = true;
@@ -64,9 +63,12 @@ function checkForError(spaceOnCard, input, error, defaultValue){
     else{
         error.classList.add("hidden")
         input.classList.remove("error-border")
-        spaceOnCard.textContent = input.value
         isInvalid = false;
     }
+}
+
+function checkForEmptyValue(){
+
 }
 
 cardHolderName.addEventListener('input', function(){
@@ -74,27 +76,25 @@ cardHolderName.addEventListener('input', function(){
 })
 
 cvcInput.addEventListener("input", function(){
-    if(isNaN(cvcInput.value))
-    cvcInput.textContent = cvc.value
+    if(!isNaN(cvcInput.value)) cvcInput.textContent = cvc.value
     
 })
 
 month.addEventListener("input", function(){
-    if(isNaN(month.value))
-    expMonthSpace.textContent = month.value
+    if(month.type == "number") console.log("number")
+    if(!isNaN(month.value)) expMonthSpace.textContent = month.value
 })
 
 year.addEventListener("input", function(){
-    if(isNaN(month.value))
-    year.textContent = expYearSpace.value
+    if(!isNaN(month.value)) year.textContent = expYearSpace.value
 })
 
 form.addEventListener("submit", function(e){
     e.preventDefault()
-    checkForError(expYearSpace, year, expError, '00')
-    checkForError(expMonthSpace, month, expError, "00")
-    checkForError(cardName, cardHolderName, cardNameError, "jane appleseed")
-    checkForError(cvc, cvcInput, cvcError, "000") 
+    checkForError(year, expError)
+    checkForError(month, expError)
+    checkForError(cardHolderName, cardNameError)
+    checkForError(cvcInput, cvcError) 
     if (!isInvalid) {
         form.classList.add("invisible")
         completedState.classList.remove("invisible")
