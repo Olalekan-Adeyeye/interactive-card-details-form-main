@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --linear-gradient: hsl(249, 99%, 64%);
+  --red: hsl(0, 100%, 66%);
+  --width: 270px;
+  --height: 170px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+.card-image-section {
+  background: url("..\\images\\bg-main-mobile.png");
+  background-size: cover;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card-front-wrapper,
+.card-back-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.card-front-wrapper {
+  background: url("..\\images\\bg-card-front.png");
+  /* background-size: contain; */
+  background-repeat: repeat;
+  background-size: var(--width) var(--height);
+  max-width: var(--width);
+  min-height: var(--height);
+  padding: 1.05em 1em;
+  z-index: 12;
+  position: absolute;
+  top: 5.5em;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.16);
+}
+.card-back-wrapper {
+  background: url("..\\images\\bg-card-back.png");
+  /* background-size: contain; */
+  background-repeat: repeat;
+  background-size: var(--width) var(--height);
+  max-width: var(--width);
+  min-height: var(--height);
+  z-index: 01;
+  float: right;
+}
+
+.card-name-exp-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+}
+
+.card-name,
+cvc {
+  letter-spacing: 1px;
+}
+
+.card-number-space {
+  margin: 2.25em 0px 1.25em 0px;
+  letter-spacing: 1px;
+}
+
+.card-bg {
+  width: 100%;
+  max-width: inherit;
+  z-index: -1;
+  height: 150px;
+}
+
+.card-logo {
+  max-width: 55px;
+}
+
+.cvc {
+  margin-top: 6.25em;
+  float: right;
+  font-size: 0.75rem;
+  margin-right: 3em;
+  letter-spacing: 2px;
+  /* border: 2px solid green; */
+}
+
+.credit-card-details-section {
+  padding: 6em 0em 1em;
+  margin: 0 auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-cvc-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.exp-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0px;
+  width: 50%;
+}
+
+.exp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exp input {
+  width: 50%;
+  margin-right: 1em;
+}
+
+.cvc-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+label {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-bottom: 0.3125em;
+}
+
+label,
+input,
+button {
+  letter-spacing: 1px;
+}
+
+input,
+button {
+  padding: 0.85em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  border: 1.5px solid grey;
+  overflow: ellipsis;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+input:hover,
+input:focus{
+  border: 1px solid var(--linear-gradient);
+  outline: none;
+}
+
+button {
+  border: 0px solid transparent;
+  background-color: var(--Very-dark-violet);
+  color: var(--white);
+  margin-top: .5em;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1rem;
+}
+
+button:hover,
+button:focus{
+  box-shadow: 0px 0px 5px 1px var(--Very-dark-violet);
+}
+
+.error {
+  color: var(--red);
+  font-size: 0.65em;
+  margin-bottom: 0.75em;
+  margin-top: 0.3125em;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.error-border{
+  border: 1px solid var(--red);
+}
+
+.attribution{
+  margin-top: 2em;
+  text-align: center;
+  font-size: .5em;
+}
+
+a{
+  color: var(--red);
+  text-decoration: none;
+}
+
+@media (max-width: 280px){
+  :root{
+    --width: 250px;
+    --height: 150px;
+  }
+
+  .card-front-wrapper{
+    padding: 1em .75em;
+  }
+
+  .card-number-space{
+    margin: 1.5em 0px 1em 0px;
+  }
+
+  .cvc{
+    margin-top: 5.5em;
+  }
+}
+
+@media (min-width: 993px) {
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card-image-section {
+    background: url("..\\images\\bg-main-desktop.png");
+    background-size: cover;
+    height: 100vh;
+    width: 300px;
+    position: relative;
+    background-repeat: no-repeat;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-front-wrapper {
+    margin-bottom: 1em;
+    margin-left: 5em;
+  }
+
+  .card-back-wrapper {
+    margin-left: 8em;
+    float: none;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.16);
+  }
+
+  .card-front-wrapper,
+  .card-back-wrapper {
+    position: static;
+  }
+
+  .credit-card-details-section {
+    min-width: 70%;
+    padding: 0%;
+    padding-left: 5em;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.completed-state{
+  text-align: center;
+}
+
+.completed-state img{
+  margin-top: .5em;
+}
+
+.completed-state *{
+  margin: .5em 0px;
+}
+
+.completed-state h2{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.completed-state p{
+  color: var(--Dark-grayish-violet);
+}
+
+.completed-state button{
+  margin-top: 2em;
+}
+
+.invisible{
+  display: none;
+}

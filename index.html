@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Interactive Card Details Form</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <main>
+      <div class="card-image-section">
+        <div class="container">
+          <div class="card-front-wrapper">
+            <img src="images/card-logo.svg" alt="" class="card-logo" />
+            <p class="card-number-space">0000 0000 0000 0000</p>
+
+            <div class="card-name-exp-wrapper">
+              <p class="card-name">Jane Appleseed</p>
+              <p class="card-exp">
+                <span class="month">00</span>/<span class="year">00</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card-back-wrapper">
+            <p class="cvc">000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="credit-card-details-section">
+        <div class="container">
+          <form action="#" id="form" method="POST">
+            <label for="cardholder-name">cardholder name</label>
+            <input
+              type="text"
+              name=""
+              maxlength="20"
+              id="cardholder-name"
+              required
+              pattern="[a-z]+\s[a-z]+\s?[a-z]+?"
+              title="(Letters only) First name and Last name seperated by space, Middle name optional"
+              placeholder="e.g Jane Appleseed"
+            />
+            <p class="cardholder-name-error error hidden">Can't be blank</p>
+            <label for="card-number">card number</label>
+            <input
+              type="text"
+              name=""
+              id="card-number"
+              required
+              maxlength="16"
+              pattern="[0-9]{16}"
+              title="16 digits only"
+              placeholder="e.g. 1234567891230000"
+            />
+            <p class="card-number-error error hidden">Can't be blank</p>
+            <div class="exp-cvc-input-wrapper">
+              <div class="exp-wrapper">
+                <label for="exp">Exp. Date (MM/YY)</label>
+                <div class="exp">
+                  <input
+                    type="text"
+                    required
+                    name="exp"
+                    id="exp-month"
+                    maxlength="2"
+                    pattern="[0-1]{1}[0-2]{1}"
+                    title="2 digits numbers only not exceeding 12"
+                    placeholder="MM"
+                  />
+                  <input
+                    type="text"
+                    name="exp"
+                    id="exp-year"
+                    required
+                    maxlength="2"
+                    title="2 digit numbers only"
+                    pattern="[0-9]{2}"
+                    placeholder="YY"
+                  />
+                </div>
+                <p class="exp-error error hidden">Can't be blank</p>
+              </div>
+              <div class="cvc-wrapper">
+                <label for="cvc-input">cvc</label>
+                <input
+                  type="text"
+                  name="cvc"
+                  id="cvc-input"
+                  maxlength="3"
+                  pattern="[0-9]{3}"
+                  title="3 digits numbers only"
+                  placeholder="CVC"
+                />
+                <p class="cvc-error error hidden">Can't be blank</p>
+              </div>
+            </div>
+            <button type="submit">Confirm</button>
+          </form>
+          <div class="completed-state invisible">
+            <img src="images/icon-complete.svg" alt="" class="marked" />
+            <h2>Thank you!</h2>
+            <p>We've added your credit card details</p>
+            <button id="submit" type="submit">Continue</button>
+          </div>
+          <div class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by
+            <a href="https://github.com/Olalekan-Adeyeye">Adeyeye Olalekan</a>.
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>
