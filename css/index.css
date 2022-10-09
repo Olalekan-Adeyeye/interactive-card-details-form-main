@@ -87,8 +87,11 @@ cvc {
 }
 
 .card-number-space {
-  margin: 2.15em 0px 1.25em 0px;
-  letter-spacing: 1px;
+  margin: 2.05em 0px 1.25em 0px;
+  width: 90%;
+  max-height: 25px;
+  overflow: hidden;
+  letter-spacing: .1em;
 }
 
 .card-bg {
@@ -173,7 +176,7 @@ button {
 }
 
 input {
-  border: 1.5px solid grey;
+  border: 1.5px solid var(--Dark-grayish-violet);
   overflow: ellipsis;
 }
 

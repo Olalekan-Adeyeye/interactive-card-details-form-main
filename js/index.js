@@ -20,22 +20,6 @@ const error = document.querySelectorAll(".error")
 let isInvalid = false;
 
 cardNumber.addEventListener('input', function(){
-    if(cardNumber.value.charAt(0) == " "){
-        cardNumberHolder.textContent = "0000 0000 0000 0000"
-        return
-    }
-
-    if(isNaN(cardNumber.value)){
-        cardNumberError.textContent = "Wrong format, numbers only"
-        cardNumberError.classList.remove('hidden')
-        cardNumber.classList.add("error-border")
-        if(isNaN(cardNumber.value)) return
-    }
-    else{
-        cardNumberError.textContent = "Can't be blank"
-        checkForError(cardNumberHolder, cardNumber, cardNumberError, "0000 0000 0000 0000")
-    }
-
     if(cardNumber.value.length <= 16){
         let check = cardNumber.value.length <= 16
         let newcontent = ""
@@ -54,7 +38,13 @@ cardNumber.addEventListener('input', function(){
     }
 })
 
-function checkForError(input, error){
+function checkForError(input, error, ){
+    if(input.name == "card-number"){
+        if(isNaN(input)) cardNumberError.textContent = "Wrong format, numbers only"
+    }
+    else{
+        cardNumberError.textContent = "Can't be blank"
+    }
     if(!input.value) {       
         error.classList.remove("hidden")
         input.classList.add("error-border")
@@ -67,30 +57,36 @@ function checkForError(input, error){
     }
 }
 
-function checkForEmptyValue(){
-
+function checkForEmptyValue(input, defaultValue,  spaceOnCard){
+    if(input.value == ""){
+        spaceOnCard.textContent = defaultValue
+    }
 }
 
 cardHolderName.addEventListener('input', function(){
     cardName.textContent = cardHolderName.value
+    checkForEmptyValue(cardHolderName, "Jane appleseed", cardName)
 })
 
 cvcInput.addEventListener("input", function(){
-    if(!isNaN(cvcInput.value)) cvcInput.textContent = cvc.value
+    cvc.textContent = cvcInput.value
+    checkForEmptyValue(cvcInput, "000", cvc)
     
 })
 
 month.addEventListener("input", function(){
-    if(month.type == "number") console.log("number")
-    if(!isNaN(month.value)) expMonthSpace.textContent = month.value
+    expMonthSpace.textContent = month.value
+    checkForEmptyValue(month, "00", expMonthSpace)
 })
 
 year.addEventListener("input", function(){
-    if(!isNaN(month.value)) year.textContent = expYearSpace.value
+    expYearSpace.textContent = year.value
+    checkForEmptyValue(year, "00", expYearSpace)
 })
 
 form.addEventListener("submit", function(e){
     e.preventDefault()
+    checkForError(cardNumber, cardNumberError)
     checkForError(year, expError)
     checkForError(month, expError)
     checkForError(cardHolderName, cardNameError)
