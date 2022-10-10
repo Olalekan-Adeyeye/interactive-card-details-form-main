@@ -30,15 +30,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](.\screenshot\interactive-card-desktop.png)
+![(.\screenshot\interactive-card-desktop.png)]
 ![](.\screenshot\interactive-card-mobile.png)
 ![](.\screenshot\active-states.png)
 
 
 ### Links
 
-- Solution URL: [(https://github.com/Olalekan-Adeyeye/Interactive-card-form]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Olalekan-Adeyeye/Interactive-card-form]
+- Live Site URL: [https://frontendmentor-card-challenge.netlify.app/]
 
 ## My process
 
