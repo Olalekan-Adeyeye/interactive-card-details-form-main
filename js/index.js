@@ -36,15 +36,11 @@ cardNumber.addEventListener('input', function(){
         }
         cardNumberHolder.textContent = spacedValue;
     }
+
+    if(isNaN(cardNumber.value)) cardNumberError.textContent = "Wrong format, numbers only"
 })
 
 function checkForError(input, error, ){
-    if(input.name == "card-number"){
-        if(isNaN(input)) cardNumberError.textContent = "Wrong format, numbers only"
-    }
-    else{
-        cardNumberError.textContent = "Can't be blank"
-    }
     if(!input.value) {       
         error.classList.remove("hidden")
         input.classList.add("error-border")
@@ -54,6 +50,7 @@ function checkForError(input, error, ){
         error.classList.add("hidden")
         input.classList.remove("error-border")
         isInvalid = false;
+
     }
 }
 
@@ -85,12 +82,12 @@ year.addEventListener("input", function(){
 })
 
 form.addEventListener("submit", function(e){
-    e.preventDefault()
+    e.preventDefault();
+    checkForError(cvcInput, cvcError) 
     checkForError(cardNumber, cardNumberError)
     checkForError(year, expError)
     checkForError(month, expError)
     checkForError(cardHolderName, cardNameError)
-    checkForError(cvcInput, cvcError) 
     if (!isInvalid) {
         form.classList.add("invisible")
         completedState.classList.remove("invisible")

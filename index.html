@@ -43,22 +43,21 @@
               name=""
               maxlength="20"
               id="cardholder-name"
-              required
-              pattern="[a-z]+\s[a-z]+\s?[a-z]+?"
-              title="(Letters only) First name and Last name seperated by space, Middle name optional"
               placeholder="e.g Jane Appleseed"
             />
+            <!-- required
+              pattern="[a-z]+\s[a-z]+\s?[a-z]+?"
+              title="(Letters only) First name and Last name seperated by space, Middle name optional" -->
             <p class="cardholder-name-error error hidden">Can't be blank</p>
             <label for="card-number">card number</label>
             <input
               type="text"
-              name="card-number"
+              name=""
               id="card-number"
               maxlength="16"
-              pattern="[0-9]{16}"
-              title="16 digits only"
               placeholder="e.g. 1234567891230000"
             />
+            <!-- pattern="[0-9]{16}" title="16 digits only" -->
             <p class="card-number-error error hidden">Can't be blank</p>
             <div class="exp-cvc-input-wrapper">
               <div class="exp-wrapper">
@@ -69,19 +68,19 @@
                     name="exp"
                     id="exp-month"
                     maxlength="2"
-                    pattern="[0-1]{1}[0-2]{1}"
-                    title="2 digits numbers only not exceeding 12"
                     placeholder="MM"
                   />
+                  <!-- pattern="[0-1]{1}[0-2]{1}" -->
+                  <!-- title="2 digits numbers only not exceeding 12" -->
                   <input
                     type="text"
                     name="exp"
                     id="exp-year"
                     maxlength="2"
-                    title="2 digit numbers only"
-                    pattern="[0-9]{2}"
                     placeholder="YY"
                   />
+                  <!-- title="2 digit numbers only"
+                    pattern="[0-9]{2}" -->
                 </div>
                 <p class="exp-error error hidden">Can't be blank</p>
               </div>
@@ -92,10 +91,10 @@
                   name="cvc"
                   id="cvc-input"
                   maxlength="3"
-                  pattern="[0-9]{3}"
-                  title="3 digits numbers only"
                   placeholder="CVC"
                 />
+                <!-- pattern="[0-9]{3}" -->
+                <!-- title="3 digits numbers only" -->
                 <p class="cvc-error error hidden">Can't be blank</p>
               </div>
             </div>

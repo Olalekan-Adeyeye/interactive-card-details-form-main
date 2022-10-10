@@ -91,7 +91,7 @@ cvc {
   width: 90%;
   max-height: 25px;
   overflow: hidden;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 .card-bg {
@@ -181,17 +181,17 @@ input {
 }
 
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button{
+input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type=number]{
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
 input:hover,
-input:focus{
+input:focus {
   border: 1px solid var(--linear-gradient);
   outline: none;
 }
@@ -200,7 +200,7 @@ button {
   border: 0px solid transparent;
   background-color: var(--Very-dark-violet);
   color: var(--white);
-  margin-top: .5em;
+  margin-top: 0.5em;
   width: 100%;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -208,7 +208,7 @@ button {
 }
 
 button:hover,
-button:focus{
+button:focus {
   box-shadow: 0px 0px 5px 1px var(--Very-dark-violet);
 }
 
@@ -223,36 +223,36 @@ button:focus{
   visibility: hidden;
 }
 
-.error-border{
+.error-border {
   border: 1px solid var(--red);
 }
 
-.attribution{
+.attribution {
   margin-top: 2em;
   text-align: center;
-  font-size: .5em;
+  font-size: 0.5em;
 }
 
-a{
+a {
   color: var(--red);
   text-decoration: none;
 }
 
-@media (max-width: 280px){
-  :root{
+@media (max-width: 280px) {
+  :root {
     --width: 250px;
     --height: 150px;
   }
 
-  .card-front-wrapper{
-    padding: 1em .75em;
+  .card-front-wrapper {
+    padding: 1em 0.75em;
   }
 
-  .card-number-space{
-    margin: 1.5em 0px 1em 0px;
+  .card-number-space {
+    margin: 1.4em 0px 1em 0px;
   }
 
-  .cvc{
+  .cvc {
     margin-top: 5.5em;
   }
 }
@@ -301,31 +301,31 @@ a{
   }
 }
 
-.completed-state{
+.completed-state {
   text-align: center;
 }
 
-.completed-state img{
-  margin-top: .5em;
+.completed-state img {
+  margin-top: 0.5em;
 }
 
-.completed-state *{
-  margin: .5em 0px;
+.completed-state * {
+  margin: 0.5em 0px;
 }
 
-.completed-state h2{
+.completed-state h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.completed-state p{
+.completed-state p {
   color: var(--Dark-grayish-violet);
 }
 
-.completed-state button{
+.completed-state button {
   margin-top: 2em;
 }
 
-.invisible{
+.invisible {
   display: none;
 }
