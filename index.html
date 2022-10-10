@@ -48,17 +48,17 @@
             <!-- required
               pattern="[a-z]+\s[a-z]+\s?[a-z]+?"
               title="(Letters only) First name and Last name seperated by space, Middle name optional" -->
-            <p class="cardholder-name-error error hidden">Can't be blank</p>
+            <!-- <p class="cardholder-name-error error hidden">Can't be blank</p> -->
             <label for="card-number">card number</label>
             <input
               type="text"
-              name=""
+              name="card-number"
               id="card-number"
               maxlength="16"
               placeholder="e.g. 1234567891230000"
             />
             <!-- pattern="[0-9]{16}" title="16 digits only" -->
-            <p class="card-number-error error hidden">Can't be blank</p>
+            <!-- <p class="card-number-error error hidden">Can't be blank</p> -->
             <div class="exp-cvc-input-wrapper">
               <div class="exp-wrapper">
                 <label for="exp">Exp. Date (MM/YY)</label>
@@ -82,7 +82,7 @@
                   <!-- title="2 digit numbers only"
                     pattern="[0-9]{2}" -->
                 </div>
-                <p class="exp-error error hidden">Can't be blank</p>
+                <!-- <p class="exp-error error hidden">Can't be blank</p> -->
               </div>
               <div class="cvc-wrapper">
                 <label for="cvc-input">cvc</label>
@@ -95,7 +95,7 @@
                 />
                 <!-- pattern="[0-9]{3}" -->
                 <!-- title="3 digits numbers only" -->
-                <p class="cvc-error error hidden">Can't be blank</p>
+                <!-- <p class="cvc-error error hidden">Can't be blank</p> -->
               </div>
             </div>
             <button type="submit">Confirm</button>

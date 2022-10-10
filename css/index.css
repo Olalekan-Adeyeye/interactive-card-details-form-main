@@ -178,6 +178,7 @@ button {
 input {
   border: 1.5px solid var(--Dark-grayish-violet);
   overflow: ellipsis;
+  margin-bottom: 1.5em;
 }
 
 input::-webkit-inner-spin-button,
@@ -210,17 +211,6 @@ button {
 button:hover,
 button:focus {
   box-shadow: 0px 0px 5px 1px var(--Very-dark-violet);
-}
-
-.error {
-  color: var(--red);
-  font-size: 0.65em;
-  margin-bottom: 0.75em;
-  margin-top: 0.3125em;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .error-border {
