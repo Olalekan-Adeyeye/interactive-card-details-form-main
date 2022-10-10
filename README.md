@@ -30,10 +30,6 @@ Users should be able to:
 
 ### Screenshot
 
-![.\screenshot\interactive-card-desktop.png]
-![](.\screenshot\interactive-card-mobile.png)
-![](.\screenshot\active-states.png)
-
 
 ### Links
 
@@ -65,6 +61,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://yorubadev.netlify.app)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/)
+- Website - [https://yorubadev.netlify.app]
+- Frontend Mentor - [https://www.frontendmentor.io/profile/Olalekan-Adeyeye]
+- Twitter - [https://www.twitter.com/olamilekan_ben]
