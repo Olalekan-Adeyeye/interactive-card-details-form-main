@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![(.\screenshot\interactive-card-desktop.png)]
+![.\screenshot\interactive-card-desktop.png]
 ![](.\screenshot\interactive-card-mobile.png)
 ![](.\screenshot\active-states.png)
 
