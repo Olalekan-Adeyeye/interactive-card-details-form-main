@@ -88,10 +88,9 @@ cvc {
 
 .card-number-space {
   margin: 2.05em 0px 1.25em 0px;
-  width: 95%;
   max-height: 21px;
   overflow: hidden;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 
 .card-bg {
