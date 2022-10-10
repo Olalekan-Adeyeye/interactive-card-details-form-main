@@ -17,15 +17,56 @@ const completedState = document.querySelector(".completed-state")
 const submit = document.getElementById("submit")
 const inputs = document.querySelectorAll("input")
 const error = document.querySelectorAll(".error")
-let isInvalid = false;
+let isInvalid = []
+
+const checkForCardNumberError = () => {
+    if(isNaN(cardNumber.value) || cardNumber.value.includes(" ")){
+        cardNumberError.textContent = "Wrong format, numbers only"
+        console.log(cardNumberError.textContent)
+        cardNumberError.classList.remove("hidden")
+        isInvalid.push(false)
+    }
+    
+    if(!cardNumber.value){
+        cardNumberError.textContent = "Can't be blank"
+        isInvalid.push(false)
+    }
+
+}
+
+function checkForError(input, error, ){
+    if(!input.value) {       
+        error.classList.remove("hidden")
+        input.classList.add("error-border")
+        isInvalid.push(false)
+    }
+    else{
+        error.classList.add("hidden")
+        input.classList.remove("error-border")
+    }
+}
+
+function checkForEmptyValue(input, defaultValue,  spaceOnCard){
+    if(!input.value){
+        spaceOnCard.textContent = defaultValue
+    }
+}
+
+const checkForNan = (input, error, nanError, blankError) => {
+    if(isNaN(input.value)){
+        error.textContent = nanError
+    }
+    else{
+        error.textContent = blankError;
+    }
+}
+
 
 cardNumber.addEventListener('input', function(){
     if(cardNumber.value.length <= 16){
         let check = cardNumber.value.length <= 16
         let newcontent = ""
-        if (check) {
-            newcontent = cardNumber.value.slice(0, 17)   
-        }
+        if (check) newcontent = cardNumber.value.slice(0, 17)   
         let spacedValue = ""
         if(cardNumber.value.length == 0) spacedValue = "0000 0000 0000 0000"
         for (let i = 0; i < newcontent.length; i++) {
@@ -36,29 +77,7 @@ cardNumber.addEventListener('input', function(){
         }
         cardNumberHolder.textContent = spacedValue;
     }
-
-    if(isNaN(cardNumber.value)) cardNumberError.textContent = "Wrong format, numbers only"
 })
-
-function checkForError(input, error, ){
-    if(!input.value) {       
-        error.classList.remove("hidden")
-        input.classList.add("error-border")
-        isInvalid = true;
-    }
-    else{
-        error.classList.add("hidden")
-        input.classList.remove("error-border")
-        isInvalid = false;
-
-    }
-}
-
-function checkForEmptyValue(input, defaultValue,  spaceOnCard){
-    if(input.value == ""){
-        spaceOnCard.textContent = defaultValue
-    }
-}
 
 cardHolderName.addEventListener('input', function(){
     cardName.textContent = cardHolderName.value
@@ -88,11 +107,12 @@ form.addEventListener("submit", function(e){
     checkForError(year, expError)
     checkForError(month, expError)
     checkForError(cardHolderName, cardNameError)
-    if (!isInvalid) {
+    checkForCardNumberError()
+    if (!isInvalid.includes(false)) {
         form.classList.add("invisible")
         completedState.classList.remove("invisible")
     }
-
+    isInvalid = []
 })
 
 submit.addEventListener("click", ()=>{
