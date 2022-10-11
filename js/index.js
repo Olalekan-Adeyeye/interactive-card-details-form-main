@@ -38,6 +38,7 @@ const checkForStringError = (input) =>{
 
 const checkForNanError = (input, requiredNumber) =>{
     if(isNaN(input.value)) addError(input)
+    else if(input.value.includes(" ")) addError(input)
     else if(!input.value) addError(input)
     else if(input.value.length < requiredNumber) addError(input)
     else removeError(input)
