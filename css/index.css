@@ -175,7 +175,7 @@ button {
 }
 
 input {
-  border: 1.5px solid var(--Dark-grayish-violet);
+  border: 2px solid var(--Dark-grayish-violet);
   overflow: ellipsis;
   margin-bottom: 1.5em;
 }
@@ -192,7 +192,7 @@ input[type="number"] {
 
 input:hover,
 input:focus {
-  border: 1px solid var(--linear-gradient);
+  border: 2px solid var(--linear-gradient);
   outline: none;
 }
 
@@ -213,7 +213,7 @@ button:focus {
 }
 
 .error-border {
-  border: 1px solid var(--red);
+  border: 2px solid var(--red);
 }
 
 .attribution {
@@ -256,7 +256,7 @@ a {
     background: url("..\\images\\bg-main-desktop.png");
     background-size: cover;
     height: 100vh;
-    width: 300px;
+    width: 350px;
     position: relative;
     background-repeat: no-repeat;
     padding: 0%;
@@ -267,11 +267,11 @@ a {
 
   .card-front-wrapper {
     margin-bottom: 1em;
-    margin-left: 5em;
+    margin-left: 8em;
   }
 
   .card-back-wrapper {
-    margin-left: 8em;
+    margin-left: 11em;
     float: none;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.16);
   }
