@@ -21,24 +21,26 @@ function checkForEmptyValue(input, defaultValue,  spaceOnCard){
     }
 }
 
+const addError = (input) =>{
+    input.classList.add("error-border")
+    isInvalid.push(false)
+}
+
+const removeError = (input) =>{
+    input.classList.remove("error-border")
+}
+
 const checkForStringError = (input) =>{
-    if(!input.value || !isNaN(input.value)) {
-        input.classList.add("error-border")
-        isInvalid.push(false)
-    }
-    else{
-        input.classList.remove("error-border")
-    }
+    if(!input.value) addError(input)
+    else if(!isNaN(input.value)) addError(input)
+    else removeError(input)
 }
 
 const checkForNanError = (input, requiredNumber) =>{
-    if(isNaN(input.value) || !input.value || input.value.length < requiredNumber){
-        input.classList.add("error-border")
-        isInvalid.push(false)
-    }
-    else{
-        input.classList.remove("error-border")
-    }
+    if(isNaN(input.value)) addError(input)
+    else if(!input.value) addError(input)
+    else if(input.value.length < requiredNumber) addError(input)
+    else removeError(input)
 }
 
 cardNumber.addEventListener('input', function(){
@@ -77,10 +79,10 @@ year.addEventListener("input", function(){
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
-    checkForNanError(cardNumber, 15)
-    checkForNanError(cvcInput, 2)
-    checkForNanError(month, 1)
-    checkForNanError(year, 1)
+    checkForNanError(cardNumber, 16)
+    checkForNanError(cvcInput, 3)
+    checkForNanError(month, 2)
+    checkForNanError(year, 2)
     checkForStringError(cardHolderName)
         if (!isInvalid.includes(false)) {
             form.classList.add("invisible")
